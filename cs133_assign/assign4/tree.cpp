@@ -42,7 +42,14 @@ void remove(node*& root, int value) {
 }
 
 void print(std::ostream& out, node* root) {
-	return;
+	if (root == nullptr) {
+		return;
+	}
+	else {
+		print(out, root->left);
+		out << root->key << " ";
+		print(out, root->right);
+	}
 }
 
 node* merge(node* t1, node* t2) {
